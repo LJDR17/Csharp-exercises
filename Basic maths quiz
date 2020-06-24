@@ -1,0 +1,97 @@
+using System;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //Maths test
+            Random random = new Random();
+            float randomNumber1 = random.Next(0, 10);
+            float randomNumber2 = random.Next(0, 10);
+            int randomNumber3 = random.Next(1, 3);
+            float randomNumberDivision = random.Next(1, 10);
+            string op = "";
+            float ans = 0;
+            int tally = 0;
+
+            Console.WriteLine("What is your name?");
+            string name = Console.ReadLine();
+
+            for (int i = 0; i < 10; i++)
+            {
+
+                switch (randomNumber3)
+                {
+                    case (1):
+                        op = "-";
+                        break;
+                    case (2):
+                        op = "+";
+                        break;
+                    case (3):
+                        op = "x";
+                        break;
+                    case (4):
+                        op = "/";
+                        break;
+                }
+
+                if (op == "/") //if the first number is smaller than the second number, they are swapped around to make the calcualtion easier.
+                {
+                    if (randomNumber2 == 0)
+                        Console.WriteLine(randomNumber1 + " " + op + " " + randomNumberDivision);
+                    if (randomNumber1 > randomNumber2)
+                        Console.WriteLine(randomNumber1 + " " + op + " " + randomNumber2);
+                    else
+                        Console.WriteLine(randomNumber2 + " " + op + " " + randomNumber1);
+                }
+                else
+                    Console.WriteLine(randomNumber1 + " " + op + " " + randomNumber2);
+
+
+                float answer = Convert.ToSingle(Console.ReadLine());
+                if (op == "-")
+                {
+                    ans = randomNumber1 - randomNumber2;
+                }
+                if (op == "+")
+                {
+                    ans = randomNumber1 + randomNumber2;
+                }
+                if (op == "x")
+                {
+                    ans = randomNumber1 * randomNumber2;
+                }
+                if (op == "/") //if first < second, they are swapped to make calc easier, if second number is 0 a random number is added to it so it isn't 0.
+                {
+                    if (randomNumber1 > randomNumber2)
+                    {
+                        if (randomNumber2 == 0)
+                            randomNumber2 = randomNumber2 + randomNumberDivision;
+                        else
+                            ans = randomNumber1 / randomNumber2;
+                    }
+                    else if (randomNumber2 == 0)
+                        randomNumber2 = randomNumber2 + randomNumberDivision;
+                    else
+                        ans = randomNumber2 / randomNumber1;
+                }   
+                if (ans == answer)
+                {
+                    Console.WriteLine("Correct!");
+                    tally = tally + 1;
+                }
+                else
+                {
+                    Console.WriteLine("Incorrect!");
+                }
+
+                randomNumber1 = random.Next(0, 10);
+                randomNumber2 = random.Next(0, 10);
+                randomNumber3 = random.Next(1, 5);
+
+
+            }
+            Console.WriteLine("Well done! You got" + " " + tally + " " + "/10");
