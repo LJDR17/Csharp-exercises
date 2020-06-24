@@ -1,0 +1,131 @@
+//fruit machine
+double money = 5;
+
+
+            while (money > 0.2)
+            {
+                Console.WriteLine("");
+                Console.WriteLine("would you like to use the fruit machine? yes or no");
+                string answer = Console.ReadLine();
+                if (answer == "yes")
+                {
+                    Console.WriteLine("");
+                    money = money - 0.2;
+                    
+                    Random random = new Random();
+                    int randomNumber1 = random.Next(1, 7);
+                    int randomNumber2 = random.Next(1, 7);
+                    int randomNumber3 = random.Next(1, 7);
+
+                    switch (randomNumber1)
+                    {
+                        case (1):
+                            Console.WriteLine("cherry");
+                            Thread.Sleep(1000);
+                            break;
+                        case (2):
+                            Console.WriteLine("bell");
+                            Thread.Sleep(1000);
+                            break;
+                        case (3):
+                            Console.WriteLine("lemon");
+                            Thread.Sleep(1000);
+                            break;
+                        case (4):
+                            Console.WriteLine("orange");
+                            Thread.Sleep(1000);
+                            break;
+                        case (5):
+                            Console.WriteLine("star");
+                            Thread.Sleep(1000);
+                            break;
+                        case (6):
+                            Console.WriteLine("skull");
+                            Thread.Sleep(1000);
+                            break;
+
+                    }
+
+                    switch (randomNumber2)
+                    {
+                        case (1):
+                            Console.WriteLine("cherry");
+                            Thread.Sleep(1000);
+                            break;
+                        case (2):
+                            Console.WriteLine("bell");
+                            Thread.Sleep(1000);
+                            break;
+                        case (3):
+                            Console.WriteLine("lemon");
+                            Thread.Sleep(1000);
+                            break;
+                        case (4):
+                            Console.WriteLine("orange");
+                            Thread.Sleep(1000);
+                            break;
+                        case (5):
+                            Console.WriteLine("star");
+                            Thread.Sleep(1000);
+                            break;
+                        case (6):
+                            Console.WriteLine("skull");
+                            Thread.Sleep(1000);
+                            break;
+
+                    }
+
+                    switch (randomNumber3)
+                    {
+                        case (1):
+                            Console.WriteLine("cherry");
+                            Thread.Sleep(1000);
+                            break;
+                        case (2):
+                            Console.WriteLine("bell");
+                            Thread.Sleep(1000);
+                            break;
+                        case (3):
+                            Console.WriteLine("lemon");
+                            Thread.Sleep(1000);
+                            break;
+                        case (4):
+                            Console.WriteLine("orange");
+                            Thread.Sleep(1000);
+                            break;
+                        case (5):
+                            Console.WriteLine("star");
+                            Thread.Sleep(1000);
+                            break;
+                        case (6):
+                            Console.WriteLine("skull");
+                            Thread.Sleep(1000);
+                            break;
+
+                    }
+
+                    if (randomNumber1 == randomNumber2 && randomNumber2 == randomNumber3)
+                    {
+                        money = money + 1;
+                        Console.WriteLine("you have" + " " + "£" + money);
+                    }
+                    if (randomNumber1 == randomNumber2 || randomNumber1 == randomNumber3 || randomNumber2 == randomNumber3)
+                    {
+                        money = money + 0.5;
+                        Console.WriteLine("you have" + " " + "£" + money);
+                    }
+                    if (randomNumber1 == 2 && randomNumber2 == 2 && randomNumber3 == 2)
+                    {
+                        money = money + 5;
+                        Console.WriteLine("you have" + " " + "£" + money);
+                    }
+                    if (randomNumber1 == 6 && randomNumber2 == 6 || (randomNumber1 == 6 && randomNumber3 == 6 || randomNumber2 == 6 && randomNumber3 == 6))
+                    {
+                        money = money - 1;
+                        Console.WriteLine("you have" + " " + "£" + money);
+                    }
+                    if (randomNumber1 == 6 && randomNumber2 == 6 && randomNumber3 == 6)
+                    {
+                        money = 0;
+                        Console.WriteLine("you have" + " " + "£" + money);
+                    }
