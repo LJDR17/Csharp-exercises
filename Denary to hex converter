@@ -1,0 +1,51 @@
+Console.WriteLine("Enter a number");
+            int denary = Convert.ToInt32(Console.ReadLine());
+            int div = denary / 16;
+            int mod = denary % 16;
+            string mod2 = Convert.ToString(mod);
+            string div1 = Convert.ToString(div);
+            switch (div)
+            {
+                case (10):
+                    div1 = "A";
+                    break;
+                case (11):
+                    div1 = "B";
+                    break;
+                case (12):
+                    div1 = "C";
+                    break;
+                case (13):
+                    div1 = "D";
+                    break;
+                case (14):
+                    div1 = "E";
+                    break;
+                case (15):
+                    div1 = "F";
+                    break;
+            }
+
+            switch (mod)
+            {
+                case (10):
+                    mod2 = "A";
+                    break;
+                case (11):
+                    mod2 = "B";
+                    break;
+                case (12):
+                    mod2 = "C";
+                    break;
+                case (13):
+                    mod2 = "D";
+                    break;
+                case (14):
+                    mod2 = "E";
+                    break;
+                case (15):
+                    mod2 = "F";
+                    break;
+            }
+            string hex = div1 + mod2;
+            Console.WriteLine(hex);
