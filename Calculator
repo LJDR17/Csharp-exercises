@@ -1,0 +1,47 @@
+//Calculator
+            Console.WriteLine("");
+            Console.WriteLine("I'm now a calculator");
+            float answer;
+            Console.WriteLine("enter in your first number");
+            answer = Convert.ToInt32(Console.ReadLine());
+
+            float answer2;
+            Console.WriteLine("enter in your second number");
+            answer2 = Convert.ToInt32(Console.ReadLine());
+
+            int operation2;
+            operation2 = 0;
+            string operation;
+            Console.WriteLine("select what mathematical operation you want to do: +, -, *, /");
+            operation = Console.ReadLine();
+
+            if (operation == "+")
+                operation2 = 1;
+            if (operation == "-")
+                operation2 = 2;
+            if (operation == "*")
+                operation2 = 3;
+            if (operation == "/")
+                operation2 = 4;
+
+
+
+            switch (operation2)
+            {
+                case 1:
+                    float addition = answer + answer2;
+                    Console.WriteLine(answer + "+" + answer2 + "=" + addition);
+                    break;
+                case 2:
+                    float subtract = answer - answer2;
+                    Console.WriteLine(answer + "-" + answer2 + "=" + subtract);
+                    break;
+                case 3:
+                    float product = answer * answer2;
+                    Console.WriteLine(answer + "*" + answer2 + "=" + product);
+                    break;
+                case 4:
+                    float divide = answer / answer2;
+                    Console.WriteLine(answer + "/" + answer2 + "=" + divide);
+                    break;
+            }
