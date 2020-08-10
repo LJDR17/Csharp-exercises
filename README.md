@@ -1,2 +1,2 @@
 # Projects
-These are my mini projects following my learning of programming.
+These are small console programs created in C#.
